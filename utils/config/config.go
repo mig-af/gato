@@ -23,17 +23,17 @@ func ConfigTrmx()bool{
 	
 	fmt.Println("CONFIGURANDO/,,,,")
 	out, _ := path.Output()
-	if(string(out) == "botsinho"){
-		fmt.Println(string(out))
-		fmt.Println("OK CONFIG")
-		return true
-	}else{
+	if(string(out) != " "){
 		log.Fatal("NOT CONFIG ")
 		com := exec.Command("bash", "-c", "cp ./botsinho $PREFIX/bin/")
 		com.Start()
 		//exec.Command("bash", "-c", `echo "echo 'botsinho > /dev/null 2>&1 &'"`)
 		time.Sleep(1 * time.Second)
 		return ConfigTrmx()
+		
 	}
+	fmt.Println(string(out))
+	fmt.Println("OK CONFIG")
+	return true
 	
 }
