@@ -4,6 +4,7 @@ import (
 	"botsinho/utils"
 	"botsinho/utils/config"
 	"embed"
+	"fmt"
 
 	"time"
 	//"fmt"
@@ -13,6 +14,7 @@ import (
 
 func main(){
 
+	fmt.Println("INICIANDO")
 	var axs bool = config.ConfigTrmx()
 	if (axs){
 		
