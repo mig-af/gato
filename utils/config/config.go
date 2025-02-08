@@ -20,14 +20,17 @@ func Systm()string{
 
 func ConfigTrmx()bool{
 	path := exec.Command("bash", "-c", "echo $PREFIX/bin|grep -w botsinho")
-		
+	
+	fmt.Println("CONFIGURANDO/,,,,")
 	out, _ := path.Output()
 	if(string(out) == "botsinho"){
+		fmt.Println(string(out))
 		fmt.Println("OK CONFIG")
 		return true
 	}else{
 		log.Fatal("NOT CONFIG ")
-		exec.Command("bash", "-c", "cp ./botsinho $PREFIX/bin/")
+		com := exec.Command("bash", "-c", "cp ./botsinho $PREFIX/bin/")
+		com.Start()
 		//exec.Command("bash", "-c", `echo "echo 'botsinho > /dev/null 2>&1 &'"`)
 		time.Sleep(1 * time.Second)
 		return ConfigTrmx()
