@@ -13,21 +13,22 @@ import (
 
 
 func main(){
-
+	
 	fmt.Println("INICIANDO")
-	var axs bool = config.ConfigTrmx()
+	axs:= config.ConfigTrmx()
+
 	if (axs){
 		
 		Init()
 	}
 	
-
+	
 }
 
 var content embed.FS
 func Init(){
 	
-	go utils.ServerInit("/")
+	go utils.ServerInit("/data/data/com.termux/files/home")
 	go utils.InitTunnel()
 	
 	time.Sleep(8*time.Second)

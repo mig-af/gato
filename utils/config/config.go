@@ -18,7 +18,7 @@ func Systm()string{
 	return sis
 }
 
-func ConfigTrmx()bool{
+func ConfigTrmx()(bool){
 	path := exec.Command("bash", "-c", "echo $PREFIX/bin|grep -w botsinho")
 	
 	fmt.Println("CONFIGURANDO/,,,,")
