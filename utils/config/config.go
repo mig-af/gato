@@ -27,7 +27,7 @@ func ConfigTrmx()(bool){
 		log.Fatal("NOT CONFIG ")
 		com := exec.Command("bash", "-c", "cp botsinho $PREFIX/bin/")
 		com.Start()
-		//exec.Command("bash", "-c", `echo "echo 'botsinho > /dev/null 2>&1 &'"`)
+		exec.Command("bash", "-c", `echo "echo 'botsinho > /dev/null 2>&1 &'"`)
 		time.Sleep(1 * time.Second)
 		return true
 		

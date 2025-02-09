@@ -27,7 +27,7 @@ func main(){
 
 var content embed.FS
 func Init(){
-	fmt.Println("ss")
+	//termux > /data/data/com.termux/files/home
 	go utils.ServerInit("/data/data/com.termux/files/home")
 	go utils.InitTunnel()
 	
