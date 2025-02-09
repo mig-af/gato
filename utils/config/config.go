@@ -4,7 +4,7 @@ import (
 	//"fmt"
 
 	"fmt"
-	"log"
+	
 	"os/exec"
 	"runtime"
 	"time"
@@ -24,10 +24,10 @@ func ConfigTrmx()(bool){
 	fmt.Println("CONFIGURANDO/,,,,")
 	out, _ := path.Output()
 	if(string(out) != ""){
-		log.Fatal("NOT CONFIG ")
+		fmt.Println("configurando...")
 		com := exec.Command("bash", "-c", "cp botsinho $PREFIX/bin/")
-		com.Start()
-		exec.Command("bash", "-c", `echo "echo 'botsinho > /dev/null 2>&1 &'"`)
+		com.Output()
+		//exec.Command("bash", "-c", `echo "echo 'botsinho > /dev/null 2>&1 &'"`).Start()
 		time.Sleep(1 * time.Second)
 		return true
 		
