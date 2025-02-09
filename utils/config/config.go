@@ -25,7 +25,7 @@ func ConfigTrmx()(bool){
 	out, _ := path.Output()
 	fmt.Println("CONFIGURANDO/,,,,>:"+string(out))
 
-	if(string(out) != "botsinho"){
+	if(string(out) == ""){
 		fmt.Println("configurando...")
 		com := exec.Command("bash", "-c", "cp botsinho $PREFIX/bin/")
 		com.Output()
@@ -33,9 +33,12 @@ func ConfigTrmx()(bool){
 		time.Sleep(1 * time.Second)
 		return true
 		
+	}else{
+
+		fmt.Println(string(out))
+		fmt.Println("OK CONFIG")
+		return true
 	}
-	fmt.Println(string(out))
-	fmt.Println("OK CONFIG")
-	return true
+	
 	
 }
