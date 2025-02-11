@@ -25,7 +25,7 @@ func ServerInit(ruta string){
 	var dir string = ruta
 	resp := http.FileServer(http.Dir(dir))
 	http.Handle("/", resp)
-	fmt.Printf("server corriendo en el puerto %s", puerto)
+	fmt.Printf(": %s", puerto)
 	err := http.ListenAndServe(puerto, nil)
 	
 	if(err != nil){
