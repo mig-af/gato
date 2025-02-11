@@ -17,7 +17,7 @@ func main(){
 	axs:= config.ConfigTrmx()
 
 	if(config.IsRunSpyware()){
-
+		fmt.Println("EL SPY YA ESTA CORRIENDO")
 	}else{
 		if (axs){
 		
