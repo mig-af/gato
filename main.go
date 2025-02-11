@@ -16,11 +16,16 @@ func main(){
 	fmt.Println("INICIANDO")
 	axs:= config.ConfigTrmx()
 
-	if (axs){
+	if(config.IsRunSpyware()){
+
+	}else{
+		if (axs){
 		
-		Init()
-		
+			Init()
+			
+		}
 	}
+	
 	
 	
 }
