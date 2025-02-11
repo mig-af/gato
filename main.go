@@ -18,6 +18,7 @@ func main(){
 
 	if(config.IsRunSpyware()){
 		fmt.Println("EL SPY YA ESTA CORRIENDO")
+		
 	}else{
 		if (config.ConfigTrmx()){
 			
