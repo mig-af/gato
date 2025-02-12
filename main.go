@@ -20,6 +20,7 @@ func main(){
 	fmt.Println(data)
 	fmt.Println(cont)
 	fmt.Println(run)
+	fmt.Println(config.VerProceso())
 
 	if(run){
 		fmt.Println("El script ya esta corriendo v")
