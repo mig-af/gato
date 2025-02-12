@@ -18,21 +18,14 @@ func main(){
 	run, data, cont := config.IsRunSpyware()
 	fmt.Println("INICIANDO")
 	fmt.Println(data)
+	fmt.Println(cont)
+	fmt.Println(run)
 	if(run){
-		fmt.Println(run)
 		fmt.Println("El script ya esta corriendo v")
-		fmt.Println(cont)
-		fmt.Println(data)
-	
-		
 	}else{
 		if (config.ConfigTrmx()){
-			fmt.Println(run)
-			fmt.Println("paso filtro de runner, el script no esta corriendo")
-			fmt.Println(data)
-			fmt.Println(cont)
 			
-		
+			fmt.Println("paso filtro de runner, el script no esta corriendo")
 			Init()
 			
 		}
