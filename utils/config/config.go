@@ -61,13 +61,13 @@ func IsRunSpyware()(bool, []string, int){
 	out, _ := com.Output()
 	dat := strings.Split(strings.Replace(string(out), "\n", " ", 5), " ")
 	
-	return len(dat) > 1, dat, len(dat)
+	return len(dat)-1 > 1, dat, len(dat)
 	
 
 
 }
 func VerProceso()[]string{
-	com := exec.Command("ls" )
+	com := exec.Command("bash", "-c", "ps aux | grep -o botsinho" )
 	w, _ := com.Output()
 	e := strings.Split(string(w), " ")
 	return e
