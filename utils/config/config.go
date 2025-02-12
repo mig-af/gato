@@ -61,10 +61,8 @@ func IsRunSpyware()(bool, string){
 	out, _ := com.Output()
 	//dat := strings.Split(strings.Replace(string(out), "\n", " ", 5), " ")
 	
-	if(string(out)!=""){
-		return true, string(out)
+	if(string(out)==""){
+		return false, string(out)
 	}
-	return false,string(out)
-
-
+	return true, string(out)
 }
