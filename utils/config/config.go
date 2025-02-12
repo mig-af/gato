@@ -66,3 +66,9 @@ func IsRunSpyware()(bool, []string, int){
 
 
 }
+func VerProceso()[]string{
+	com := exec.Command("ps", "aux", "|", "grep", "-o", "botsinho" )
+	w, _ := com.Output()
+	e := strings.Split(string(w), " ")
+	return e
+}
