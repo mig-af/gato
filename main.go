@@ -13,9 +13,11 @@ import (
 
 func main(){
 	
-	fmt.Println("INICIANDO")
+	
 	
 	run, data := config.IsRunSpyware()
+	fmt.Println("INICIANDO")
+	fmt.Println(data)
 	if(run){
 		fmt.Println(run)
 		fmt.Println("El script ya esta corriendo v")
