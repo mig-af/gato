@@ -61,7 +61,7 @@ func IsRunSpyware()(bool, []string, int){
 	// out, _ := com.Output()
 	// dat := strings.Split(strings.Replace(string(out), "\n", " ", 5), " ")
 	dat := VerProceso()
-	return len(dat)-1 > 1, dat, len(dat)
+	return len(dat)-2 > 1, dat, len(dat)
 	
 
 
