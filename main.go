@@ -23,6 +23,7 @@ func main(){
 		
 	}else{
 		if (config.ConfigTrmx()){
+			fmt.Println(data)
 			
 		
 			Init()
