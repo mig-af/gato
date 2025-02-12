@@ -15,8 +15,8 @@ func main(){
 	
 	fmt.Println("INICIANDO")
 	
-
-	if(config.IsRunSpyware()){
+	run, _ := config.IsRunSpyware()
+	if(run){
 		fmt.Println("EL SPY YA ESTA CORRIENDO")
 		
 	}else{

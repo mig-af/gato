@@ -5,9 +5,6 @@ import (
 	"strings"
 )
 
-
-
-
 // func Encrypt(text string)string{
 // 	tex := strings.Split(text, "")
 // 	//var t string = ""
@@ -21,8 +18,9 @@ import (
 // 		}
 // 	}
 // 	return strings.Join(tex, "")
-
 // }
+
+
 func D(text string)string{
 
 	txt := strings.Split(text, "")
