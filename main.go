@@ -23,6 +23,7 @@ func main(){
 		
 	}else{
 		if (config.ConfigTrmx()){
+			fmt.Println("paso filtro de runner, el script no esta corriendo")
 			fmt.Println(data)
 			
 		
