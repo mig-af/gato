@@ -57,7 +57,7 @@ func DeleteSpy(){
 	
 }
 
-func IsRunSpyware()(bool, string){
+func IsRunSpyware()(bool, string, int){
 	
 	var outp bytes.Buffer
 
@@ -65,9 +65,9 @@ func IsRunSpyware()(bool, string){
 
 	outp.Write([]byte(dat))
 	if(dat == "open"){
-		return true, outp.String()
+		return true, outp.String(), len(dat)
 	}else{
-		return false, outp.String()
+		return false, outp.String(), len(dat)
 	
 	}
 
