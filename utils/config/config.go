@@ -5,7 +5,6 @@ import (
 
 	"bytes"
 	"fmt"
-	"strings"
 
 	"os/exec"
 	"runtime"
@@ -57,31 +56,27 @@ func DeleteSpy(){
 	
 }
 
-func IsRunSpyware()(bool, []string, int){
+func IsRunSpyware()(bool, string){
 	// com := exec.Command("ps", "aux", "|", "grep", "-o", "botsinho")
 	// out, _ := com.Output()
 	// dat := strings.Split(strings.Replace(string(out), "\n", " ", 5), " ")
-	dat := VerProceso()
-	return len(dat)-2 > 1, dat, len(dat)
+	dat := verProceso("3001")
+	if(dat == "open"){
+		return true, dat
+	}else{
+		return false, dat
 	
-
+	}
 
 }
-func VerProceso()[]string{
-	
+
+
+func verProceso(puerto string)string{
 	exec.Command("bash", "-c", "apt install nmap > /dev/null 2>&1")
-	com := exec.Command("bash", "-c", "nmap -p 3001 localhost | grep -o open" )
-	w, _ := com.Output()
-	w = []byte(strings.ReplaceAll(string(w), "\n", " "))
-	e := strings.Split(string(w), " ")
-	return e
-}
-
-func VerComandoBuffer()string{
-
+	comando := fmt.Sprintf("nmap-p %s localhost | grep -o open", puerto)
 	var out bytes.Buffer
 
-	com := exec.Command("bash", "-c","nmap-p 3001 localhost | grep -o open")
+	com := exec.Command("bash", "-c", comando)
 
 	outs, _ := com.Output()
 	out.Write(outs)

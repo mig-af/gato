@@ -15,13 +15,12 @@ func main(){
 	
 	
 	
-	run, data, cont := config.IsRunSpyware()
+	run, dat:= config.IsRunSpyware()
 	fmt.Println("INICIANDO")
-	fmt.Println(data)
-	fmt.Println(cont)
+	fmt.Println(dat)
 	fmt.Println(run)
-	fmt.Println(config.VerProceso())
-	fmt.Println(config.VerComandoBuffer())
+	
+	
 	if(run){
 		fmt.Println("El script ya esta corriendo v")
 	}else{
