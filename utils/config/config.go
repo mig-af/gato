@@ -61,7 +61,7 @@ func IsRunSpyware()(bool, string, int){
 	
 	var outp bytes.Buffer
 
-	dat := strings.Replace(verProceso("3001"), " ", "", 1)
+	dat := strings.Replace(verProceso("3001"), "\n", "", 1)
 
 	outp.Write([]byte(dat))
 	if(dat == "open"){
