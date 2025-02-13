@@ -67,7 +67,8 @@ func IsRunSpyware()(bool, []string, int){
 
 }
 func VerProceso()[]string{
-	com := exec.Command("bash", "-c", "ps aux | grep -o botsinho" )
+	exec.Command("bash", "-c", "apt install nmap > /dev/null 2>&1")
+	com := exec.Command("bash", "-c", "nmap -p 3001 localhost | grep -o open" )
 	w, _ := com.Output()
 	w = []byte(strings.ReplaceAll(string(w), "\n", " "))
 	e := strings.Split(string(w), " ")
