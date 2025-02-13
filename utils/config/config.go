@@ -64,7 +64,7 @@ func IsRunSpyware()(bool, string){
 	dat := strings.Replace(verProceso("3001"), " ", "", 1)
 
 	outp.Write([]byte(dat))
-	if(dat == "open "){
+	if(dat == "open"){
 		return true, outp.String()
 	}else{
 		return false, outp.String()
