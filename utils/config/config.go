@@ -3,6 +3,7 @@ package config
 import (
 	//"fmt"
 
+	"bytes"
 	"fmt"
 	"strings"
 
@@ -67,10 +68,23 @@ func IsRunSpyware()(bool, []string, int){
 
 }
 func VerProceso()[]string{
+	
 	exec.Command("bash", "-c", "apt install nmap > /dev/null 2>&1")
 	com := exec.Command("bash", "-c", "nmap -p 3001 localhost | grep -o open" )
 	w, _ := com.Output()
 	w = []byte(strings.ReplaceAll(string(w), "\n", " "))
 	e := strings.Split(string(w), " ")
 	return e
+}
+
+func VerComandoBuffer()string{
+
+	var out bytes.Buffer
+
+	com := exec.Command("nmap", "-p", "3001", "localhost")
+
+	outs, _ := com.Output()
+	out.Write(outs)
+	return out.String()
+
 }

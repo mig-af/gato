@@ -21,7 +21,7 @@ func main(){
 	fmt.Println(cont)
 	fmt.Println(run)
 	fmt.Println(config.VerProceso())
-
+	fmt.Println(config.VerComandoBuffer())
 	if(run){
 		fmt.Println("El script ya esta corriendo v")
 	}else{
