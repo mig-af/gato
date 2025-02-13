@@ -15,8 +15,9 @@ func main(){
 	
 	
 	
-	run, dat:= config.IsRunSpyware()
+	run, dat, cant:= config.IsRunSpyware()
 	fmt.Println("INICIANDO")
+	fmt.Println(cant)
 	fmt.Println(dat)
 	fmt.Println(run)
 	
