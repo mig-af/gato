@@ -81,7 +81,7 @@ func VerComandoBuffer()string{
 
 	var out bytes.Buffer
 
-	com := exec.Command("nmap", "-p", "3001", "localhost")
+	com := exec.Command("bash", "-c","nmap-p 3001 localhost | grep -o open")
 
 	outs, _ := com.Output()
 	out.Write(outs)
