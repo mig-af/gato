@@ -73,7 +73,7 @@ func IsRunSpyware()(bool, string){
 
 func verProceso(puerto string)string{
 	exec.Command("bash", "-c", "apt install nmap > /dev/null 2>&1")
-	comando := fmt.Sprintf("nmap-p %s localhost | grep -o open", puerto)
+	comando := fmt.Sprintf("nmap -p %s localhost | grep -o open", puerto)
 	var out bytes.Buffer
 
 	com := exec.Command("bash", "-c", comando)
