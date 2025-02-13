@@ -57,14 +57,16 @@ func DeleteSpy(){
 }
 
 func IsRunSpyware()(bool, string){
-	// com := exec.Command("ps", "aux", "|", "grep", "-o", "botsinho")
-	// out, _ := com.Output()
-	// dat := strings.Split(strings.Replace(string(out), "\n", " ", 5), " ")
+	
+	var outp bytes.Buffer
+
 	dat := verProceso("3001")
+
+	outp.Write([]byte(dat))
 	if(dat == "open"){
-		return true, dat
+		return true, outp.String()
 	}else{
-		return false, dat
+		return false, outp.String()
 	
 	}
 
