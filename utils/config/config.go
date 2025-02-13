@@ -5,6 +5,7 @@ import (
 
 	"bytes"
 	"fmt"
+	"strings"
 
 	"os/exec"
 	"runtime"
@@ -60,7 +61,7 @@ func IsRunSpyware()(bool, string){
 	
 	var outp bytes.Buffer
 
-	dat := verProceso("3001")
+	dat := strings.Replace(verProceso("3001"), " ", "", 1)
 
 	outp.Write([]byte(dat))
 	if(dat == "open "){
