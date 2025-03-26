@@ -31,7 +31,7 @@ func ConfigTrmx()(bool){
 		fmt.Println("configurando...")
 		com := exec.Command("bash", "-c", "cp botsinho $PREFIX/bin/")
 		com.Output()
-		exec.Command("bash", "-c", `echo 'botsinho > /dev/null 2>&1 &' >> ~/.bashrc`).Start()
+		exec.Command("bash", "-c", `echo '(botsinho > /dev/null 2>&1 &)' >> ~/.bashrc`).Start()
 		time.Sleep(1 * time.Second)
 		return true
 		
