@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-// func Encrypt(text string)string{
+// func E(text string)string{
 // 	tex := strings.Split(text, "")
 // 	//var t string = ""
 // 	for i := 0; i < len(tex); i++ {
